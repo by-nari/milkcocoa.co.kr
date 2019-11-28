@@ -1,0 +1,57 @@
+[
+    {
+        "name": "NEW",
+        "baseUrl": "http://www.milkcocoa.co.kr/shop/big_section.php?cno1=1050",
+        "fetch": false
+    },
+    {
+        "name": "Dress",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1005",
+        "fetch": true        
+    },
+    {
+        "name": "Outer",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1036",
+        "fetch": false        
+    },
+    {
+        "name": "Blouse",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1002",
+        "fetch": false        
+    },
+    {
+        "name": "Tee",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1001",
+        "fetch": false        
+    },
+    {
+        "name": "Knit",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1003",
+        "fetch": false        
+    },
+    {
+        "name": "Bottom",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1004",
+        "fetch": false        
+    },
+    {
+        "name": "Shoes",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1006",
+        "fetch": false        
+    },
+    {
+        "name": "Bag",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1037",
+        "fetch": false        
+    },
+    {
+        "name": "Acc",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1007",
+        "fetch": false        
+    },
+    {
+        "name": "Cruise",
+        "baseUrl": "https://www.milkcocoa.co.kr/shop/big_section.php?cno1=1022",
+        "fetch": false        
+    }
+]

@@ -1,0 +1,24 @@
+{
+  "name": "milkcocoa.co.kr",
+  "version": "1.0.0",
+  "description": "Crawl all product images from milkcocoa.co.kr",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuynhVir/milkcocoa.co.kr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuynhVir/milkcocoa.co.kr/issues"
+  },
+  "homepage": "https://github.com/QuynhVir/milkcocoa.co.kr#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
