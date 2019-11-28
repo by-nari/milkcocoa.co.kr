@@ -59,5 +59,3 @@ section.map(async item => {
         buildProductURLList(item.baseUrl, [], 1)
     }
 })
-
-
