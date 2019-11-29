@@ -6,6 +6,8 @@ const fs = require('fs')
 let section = JSON.parse(fs.readFileSync('section.json'))
 
 const downloadImage = async url => {
+    console.log(`Downloading ${url}`)
+
     const path = p.resolve(__dirname, 'data', url.split('/').slice(-1).pop())
     const writer = fs.createWriteStream(path)
   
@@ -31,7 +33,6 @@ const getImageList = async list => {
         const result = rawdata.match(/src="(https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/gm)
         if (result !== null) {
             for (const image of result) {
-                console.log(`Downloading ${/src="(https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/.exec(image)[1]}`)
                 await downloadImage(/src="(https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/.exec(image)[1])
             }
         }
