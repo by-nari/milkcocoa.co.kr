@@ -8,21 +8,25 @@ let section = JSON.parse(fs.readFileSync('section.json'))
 const downloadImage = async url => {
     console.log(`Downloading ${url}`)
 
-    const path = p.resolve(__dirname, 'data', url.split('/').slice(-1).pop())
-    const writer = fs.createWriteStream(path)
-  
-    const response = await axios({
-        url,
-        method: 'GET',
-        responseType: 'stream'
-    })
-  
-    response.data.pipe(writer)
-  
-    return new Promise((resolve, reject) => {
-        writer.on('finish', resolve)
-        writer.on('error', reject)
-    })
+    try {
+        const path = p.resolve(__dirname, 'data', url.split('/').slice(-1).pop())
+        const writer = fs.createWriteStream(path)
+      
+        const response = await axios({
+            url,
+            method: 'GET',
+            responseType: 'stream'
+        })
+      
+        response.data.pipe(writer)
+      
+        return new Promise((resolve, reject) => {
+            writer.on('finish', resolve)
+            writer.on('error', reject)
+        })      
+    } catch (error) {
+        console.log(`An error has occurred when trying to download ${url}`)
+    }
 }
 
 const getImageList = async list => {
