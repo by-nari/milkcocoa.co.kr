@@ -28,10 +28,12 @@ const getImageList = async list => {
         const res = await axios.get(product)
         const $ = cheerio.load(res.data)
         const rawdata = $('div.dtInfo.commonInfo').html()
-        const result = /<img src="(?<image>https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/gm.exec(rawdata)
+        const result = rawdata.match(/src="(https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/gm)
         if (result !== null) {
-            console.log(`Downloading ${result.groups.image}`)
-            await downloadImage(result.groups.image) 
+            for (const image of result) {
+                console.log(`Downloading ${/src="(https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/.exec(image)[1]}`)
+                await downloadImage(/src="(https:\/\/image\.milkcocoa\.co\.kr\/__manage__\/product_[^"]+)">/.exec(image)[1])
+            }
         }
     }
 }
@@ -45,7 +47,7 @@ const buildProductURLList = async (baseUrl, list, page) => {
         }
         buildProductURLList(baseUrl, list, page + 1)
     } else {
-        getImageList(list)
+        getImageList([...new Set(list)])
     }
 }
 
